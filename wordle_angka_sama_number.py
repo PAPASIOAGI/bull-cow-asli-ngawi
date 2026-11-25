@@ -4,23 +4,28 @@ def hitung(rahasia, tebakan):
     for i in range(4):
         if tebakan[i] == rahasia[i]:
             BULL += 1
-        elif tebakan[i] in rahasia[i]:
-            COW += 1
+        else:
+            for j in range(4):
+                if tebakan[i] == rahasia[j]:
+                    COW += 1
     return (BULL, COW)
 
 def cek_tebakan(tebakan):
     if len(tebakan) != 4:
-        return False
+        return ("ga valid mas, harus 4 digit cik")
     if not tebakan.isdigit():
-        return False
+        return ("harus angka mas, bukan huruf woilah")
     if len(set(tebakan)) != 4:
-        return False
-    return True
+        return ("ga valid, jangan kayak password komdigi mas. mikirs kirk")
+    return None
 
 def uji():
     print(cek_tebakan("1234"))
-    print(hitung("1234", "1234"))
+    print(hitung("1807", "7810"))
 print("Semua uji coba berhasil!")
 
 
 uji()
+
+
+
