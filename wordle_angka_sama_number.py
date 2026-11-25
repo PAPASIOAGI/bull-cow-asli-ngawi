@@ -8,4 +8,11 @@ def hitung(rahasia, tebakan):
             cow += 1
     return (bull, cow)
 
-
+def cek_tebakan(tebakan):
+    if len(tebakan) != 4:
+        return False
+    if not tebakan.isdigit():
+        return False
+    if len(set(tebakan)) != 4:
+        return False
+    return True
