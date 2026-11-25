@@ -1,3 +1,5 @@
+import random
+
 def hitung(rahasia, tebakan):
     BULL = 0
     COW = 0
@@ -18,6 +20,10 @@ def cek_tebakan(tebakan):
     if len(set(tebakan)) != 4:
         return ("ga valid, jangan kayak password komdigi mas. mikirs kirk")
     return None
+
+def buat_rahasia():
+
+def main():
 
 def uji():
     print(cek_tebakan("1234"))
