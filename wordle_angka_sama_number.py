@@ -3,10 +3,10 @@ def hitung(rahasia, tebakan):
     COW = 0
     for i in range(4):
         if tebakan[i] == rahasia[i]:
-            bull += 1
+            BULL += 1
         elif tebakan[i] in rahasia[i]:
-            cow += 1
-    return (bull, cow)
+            COW += 1
+    return (BULL, COW)
 
 def cek_tebakan(tebakan):
     if len(tebakan) != 4:
@@ -16,3 +16,11 @@ def cek_tebakan(tebakan):
     if len(set(tebakan)) != 4:
         return False
     return True
+
+def uji():
+    print(cek_tebakan("1234"))
+    print(hitung("1234", "1234"))
+print("Semua uji coba berhasil!")
+
+
+uji()
