@@ -1,5 +1,9 @@
 import random
 
+
+rahasia_subject = "6712"
+
+
 def hitung(rahasia, tebakan):
     BULL = 0
     COW = 0
@@ -24,12 +28,29 @@ def cek_tebakan(tebakan):
 def buat_rahasia():
     rahasia = ""
     while len(set(rahasia)) < 4:
-        rahasia = str(random.randint(0, 9999))
+        rahasia = str(random.randint(0, 9999)).zfill(4)
     return rahasia
 
 
 def main():
-    return main()
+    rahasia = buat_rahasia()
+    print("Selamat datang di wordle ada angka sama number")
+    print("Tebak angka 4 digit dengan digit yang berbeda.")
+    while True:
+        tebakan = input("Masukkan jawaban: ")
+
+        validasi = cek_tebakan(tebakan)
+        if validasi is not None:
+            print(validasi)
+            continue
+
+        bulls, cows = hitung(rahasia, tebakan)
+
+        print(f"BULLS: {bulls}, COWS: {cows}")
+        if bulls == 4:
+            print("Selamat! Anda berhasil menebak angka rahasia!")
+            break
+
 
 def uji():
     assert cek_tebakan("1234") is None, "harusnya valid"
@@ -45,7 +66,7 @@ def uji():
     print("Semua pengujian berhasil!")
 
 
-uji()
+main()
 
 
 
