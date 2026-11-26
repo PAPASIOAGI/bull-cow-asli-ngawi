@@ -1,6 +1,6 @@
 import random
 
-rahasia_subject = "6712"
+RAHASIA_TES  = "1807"
 
 def hitung(rahasia, tebakan):
     BULL = 0
