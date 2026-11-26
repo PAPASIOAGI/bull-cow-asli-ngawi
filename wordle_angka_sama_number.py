@@ -1,8 +1,6 @@
 import random
 
-
 rahasia_subject = "6712"
-
 
 def hitung(rahasia, tebakan):
     BULL = 0
